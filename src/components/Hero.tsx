@@ -26,7 +26,7 @@ export default function Hero() {
         <div className="flex flex-col items-start text-left space-y-2 w-full max-w-xl min-w-0 break-words">
           <div className="flex items-center gap-2">
             <span className="text-3xl md:text-4xl xl:text-5xl font-bold tracking-tighter bg-gradient-to-r from-black via-green-600 to-green-400 dark:from-black dark:via-green-400 dark:to-green-300 bg-[length:200%_200%] bg-clip-text text-transparent animate-gradient-move">
-              Hi, I'm{' '}
+              Hi, I&apos;m{' '}
               <Typewriter
                 words={[DATA.name.split(' ')[0]]}
                 loop={1}

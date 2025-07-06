@@ -243,7 +243,7 @@ export default function Page() {
                   <span className="text-3xl sm:text-4xl">I like solving things</span>
                 </h2>
                 <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto mt-2">
-                  During my time in university I was able to do part-time gigs to finance my medical school, I've written clinical research papers, attended {DATA.hackathons.length}+ hackathons and met curious well trained tech & non tech founders who guided me through the tech industry.
+                  During my time in university I was able to do part-time gigs to finance my medical school, I&apos;ve written clinical research papers, attended {DATA.hackathons.length}+ hackathons and met curious well trained tech & non tech founders who guided me through the tech industry.
                 </p>
                 <div className="flex justify-center gap-2 mt-2">
                   <span className="inline-flex items-center rounded-full bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-300 px-3 py-1 text-xs font-semibold">{DATA.hackathons.length} events</span>
