@@ -299,7 +299,7 @@ export const DATA = {
       title: "MD, Surgical Dept.",
       logoUrl: "/trrh.jpg",
       start: "May 2025",
-      end: "Present",
+      end: "June 2025",
       description: "Assisting major and minor surgical procedures, contributing to improved surgical outcomes and reduced operation time. Managing pre- and post-operative patient care, helping speed up patient recovery. Helping coordinate ward rounds and documentation of patient details."
     },
     {
