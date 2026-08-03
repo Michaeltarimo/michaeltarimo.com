@@ -70,8 +70,23 @@
     * {
       @apply border-border;
     }
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
     body {
       @apply bg-background text-foreground;
+      -webkit-tap-highlight-color: transparent;
+      overscroll-behavior-y: none;
+    }
+  }
+
+  @layer utilities {
+    .pb-safe {
+      padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+    }
+    .touch-target {
+      @apply min-h-11 min-w-11;
     }
   }
 

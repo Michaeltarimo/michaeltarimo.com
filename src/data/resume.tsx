@@ -25,12 +25,13 @@ export const DATA = {
   name: "Michael Tarimo",
   initials: "Dr",
   url: "https://michaeltarimo.com",
-  location: "Dar es salaam, TZ",
+  location: "Arusha, TZ",
   locationLink: "https://maps.app.goo.gl/dS4qGRDDq3FrV8A99",
   description:
-    "Merging hands-on medical knowledge with tech innovation, I lead the creation of digital solutions that transform healthcare and research. Always learning, building, and reaching for solutions.",
+    "Medical doctor and full-stack developer based in Tanzania. I design and ship modern web apps for clients while pursuing advanced professional training. Open to freelance work, collaborations, and meaningful projects.",
   summary:
-    "Before I ever wore a white coat, I was already building websites, teaching web design, and exploring the world of blockchain and game development. Later, I pursued my [medical degree in Tanzania](/#education), where I led [health outreach programs across the country](/#community-involvement) and saw firsthand the challenges in patient care and data management.\n\nDriven by a passion to bridge these worlds, I taught myself software development to solve real healthcare problems. Today, I'm focused on scaling [Rezour](https://rezour.com) and [Seedbase Africa](https://seedbase.africa), startups I founded to automate clinical research, empower entrepreneurs, and optimize patient data management using AI-driven solutions.",
+    "Before I ever wore a white coat, I was already building websites, teaching web design, and exploring blockchain and game development. I earned my [medical degree at MUHAS](/#education), completed hospital rotations across Tanzania, and led health outreach programs that showed me where healthcare and technology collide.\n\nI taught myself software development to solve those problems — founding [Rezour](https://rezour.com) for clinical research automation and [Seedbase Africa](https://seedbase.africa) for startup empowerment. After my clinical postings wrapped up in mid-2025, I continued building for clients: custom cake-ordering platforms, social media agency sites, AI-powered tools, and more.\n\nI'm currently finishing advanced professional training and **open to freelance projects, client work, and collaborations**. Whether you need a polished website, a full-stack app, or health-tech consulting — [let's talk](/#contact).",
+  tagline: "Doctor. Developer. Explorer.",
   avatarUrl: "/michael.png",
   skillGroups: [
     {
@@ -238,7 +239,7 @@ export const DATA = {
     { href: "/blog", icon: NotebookIcon, label: "Blog" },
   ],
   contact: {
-    email: "michael@rezour.com",
+    email: "michaeltarimo4@gmail.com",
     tel: "+255767644497",
     social: {
       GitHub: {
@@ -280,6 +281,18 @@ export const DATA = {
 
   work: [
     {
+      company: "Freelance & Client Work",
+      href: "https://michaeltarimo.com/#projects",
+      badges: ["Open"],
+      location: "Remote · Tanzania",
+      title: "Full-Stack Developer & Consultant",
+      logoUrl: "/michael.png",
+      start: "July 2025",
+      end: "Present",
+      description:
+        "Building modern web applications for clients across Tanzania and beyond — from custom business websites and e-commerce flows to AI-powered SaaS platforms. Recent work includes Cheryl's Cakes, Social Bean, and Hashly.ai. Available for new projects and collaborations."
+    },
+    {
       company: "Seedbase",
       href: "https://seedbase.africa",
       badges: [],
@@ -287,9 +300,9 @@ export const DATA = {
       title: "Founder & Lead Developer",
       logoUrl: "/seedbase.png",
       start: "May 2025",
-      end: "Current",
+      end: "Present",
       description:
-        "Founded and currently leading Seedbase Africa, a platform focused on empowering African startups and entrepreneurs through technology-driven solutions, mentorship, and access to resources. Overseeing product development, strategic partnerships, and community growth."
+        "Founded Seedbase Africa, a platform empowering African startups and entrepreneurs through technology-driven solutions, mentorship, and access to resources. Building the MVP and growing the community alongside client work."
     },
     {
       company: "Tanga Regional Referral Hospital",
@@ -403,7 +416,120 @@ export const DATA = {
       end: "Sept 2009",
     },
   ],
+  adventures: [
+    {
+      title: "Summited Mount Kilimanjaro",
+      location: "Uhuru Peak · 5,895m",
+      description:
+        "Reached the roof of Africa — a multi-day trek through rainforest, alpine desert, and glacier fields to the highest point on the continent.",
+      icon: "mountain",
+      image: "/adventures/kilimanjaro.jpg",
+      credit: "Furtwängler Glacier · Wikimedia Commons",
+    },
+    {
+      title: "Dived the Marangu Waters",
+      location: "Marangu · Kilimanjaro Region",
+      description:
+        "Explored some of Tanzania's coldest underwater terrain near Marangu — a completely different world from the summit, just as unforgettable.",
+      icon: "waves",
+      image: "/adventures/marangu.jpg",
+      credit: "Marangu waterfalls · Wikimedia Commons",
+    },
+    {
+      title: "Makuyuni Wildlife Park",
+      location: "Tarangire–Manyara Corridor",
+      description:
+        "Tracked elephants, giraffes, and lions through Makuyuni's rolling savannas — a 49 km² wildlife corridor between Tarangire and Lake Manyara, far from the crowds.",
+      icon: "trees",
+      image: "/adventures/makuyuni.jpg",
+      credit: "Tarangire–Manyara corridor · Wikimedia Commons",
+    },
+    {
+      title: "Always Exploring",
+      location: "Arusha · Home base",
+      description:
+        "Based in Arusha now — gateway to Kilimanjaro, the northern circuit, and endless wildlife. From city streets to national park edges, this is where I recharge between builds.",
+      icon: "compass",
+      image: "/adventures/arusha.jpg",
+      credit: "Arusha National Park · Wikimedia Commons",
+    },
+  ],
   projects: [
+    {
+      title: "Cheryl's Cakes",
+      href: "https://cherylscakes.vercel.app",
+      dates: "Jan 2026 - Present",
+      active: true,
+      themeColor: "from-amber-800",
+      bgColor: "bg-amber-50",
+      description:
+        "Designed and built a full custom cake ordering platform for a Dar es Salaam bakery — interactive cake designer, real-time pricing in Tsh, WhatsApp order flow, portfolio gallery, and a mobile-first experience baked with love.",
+      technologies: [
+        "Next.js",
+        "TypeScript",
+        "TailwindCSS",
+        "Shadcn UI",
+        "Vercel",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://cherylscakes.vercel.app",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "/cherylscakes.png",
+    },
+    {
+      title: "Social Bean",
+      href: "https://socialbean.vercel.app",
+      dates: "Dec 2025 - Present",
+      active: true,
+      themeColor: "from-yellow-400",
+      bgColor: "bg-yellow-50",
+      description:
+        "Built a modern landing page and platform showcase for a professional social media management agency — animated dashboards, multi-platform features, client stats, and a polished conversion-focused design.",
+      technologies: [
+        "Next.js",
+        "TypeScript",
+        "TailwindCSS",
+        "Framer Motion",
+        "Vercel",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://socialbean.vercel.app",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "/socialbean.png",
+    },
+    {
+      title: "Hashly.ai",
+      href: "https://hashly.vercel.app",
+      dates: "Nov 2025 - Present",
+      active: true,
+      themeColor: "from-neutral-900",
+      bgColor: "bg-neutral-50",
+      description:
+        "Developed the frontend for an AI-powered social media co-pilot built on Supabase and Next.js — features, pricing, blog, and auth-ready starter architecture.",
+      technologies: [
+        "Next.js",
+        "TypeScript",
+        "Supabase",
+        "TailwindCSS",
+        "Vercel",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://hashly.vercel.app",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "/hashly.png",
+    },
     {
       title: "Seedbase",
       href: "https://seedbase.africa",
@@ -615,27 +741,27 @@ export const DATA = {
   hackathons: [
     {
       title: "Binary Labs",
-      dates: "May, 2024",
-      location: "Dar es salaam, Tanzania",
+      type: "hackathon",
+      dates: "May 2024",
+      location: "Dar es Salaam, Tanzania",
       description:
-        "Developed a telemedicine chatbot for triage and patient consultations",
-      image:
-        "/hackathon.png",
-      mlh: "https://s3.amazonaws.com/logged-assets/trust-badge/2019/mlh-trust-badge-2019-white.svg",
+        "Built a telemedicine chatbot for patient triage and consultations — merging clinical workflow thinking with rapid prototyping under time pressure.",
+      image: "/hackathon.png",
+      tags: ["Telemedicine", "Chatbot", "Health Tech"],
       links: [],
     },
-    
     {
-      title: "Post operative woundcare",
-      dates: "July, 2021 - May, 2022",
+      title: "Post-Operative Wound Care Research",
+      type: "research",
+      dates: "July 2021 – May 2022",
       location: "Muhimbili National Hospital",
       description:
-        "Wrote a research paper report on knowledge & practice regarding post op woundcare and trends of SSI at MNH",
-      image:
-        "/research.png",
+        "Authored a clinical research report on knowledge, practice, and surgical site infection trends in post-operative wound care at MNH.",
+      image: "/research.png",
+      tags: ["Clinical Research", "SSI", "Wound Care"],
       links: [
         {
-          title: "Source",
+          title: "Read Paper",
           icon: <Icons.github className="h-4 w-4" />,
           href: "https://github.com/Michaeltarimo/research/blob/main/Practice%20trends-Post-op%20woundcare%20(MNH).pdf",
         },
@@ -657,8 +783,8 @@ export const DATA = {
     regNo: "MCT20220661",
     qualification: "MD(2022) - Muhimbili University Of Health And Allied Sciences",
     status: "Registered and allowed to practise as MEDICAL DOCTOR (GP)",
-    verificationUrl: "https://mct.go.tz/oas/register/searchDoctors.php?key=qbfxyjt503ec86dsiuv91wg7a4hp2omznrk66180b28xt19",
+    verificationUrl: "https://hprs.moh.go.tz/#/hprs/practitioner-portal",
     logoUrl: "/mct.jpeg",
-    summary: `I am fully registered with the Medical Council of Tanganyika (MCT) as a Medical Doctor (Reg. No: MCT20220661), having qualified with an MD from Muhimbili University of Health and Allied Sciences in 2022. My registration status is active and in good standing, allowing me to practise as a General Practitioner. You can verify my credentials directly on the MCT website.`,
+    summary: `I am fully registered with the Medical Council of Tanganyika (MCT) as a Medical Doctor (Reg. No: MCT20220661), having qualified with an MD from Muhimbili University of Health and Allied Sciences in 2022. My registration status is active and in good standing, allowing me to practise as a General Practitioner. You can verify my credentials on the Tanzania Health Practitioner Registration System (HPRS).`,
   },
 } as const;

@@ -33,14 +33,59 @@ interface Props {
   bgColor?: string;
 }
 
-// Mapping for project card background colors (light and dark mode)
-const projectBgColorMap: Record<string, { base: string; hover: string }> = {
-  Seedbase: { base: "bg-green-100 dark:bg-green-900/40", hover: "hover:bg-green-500 hover:text-white" },
-  "Afarensis GPU": { base: "bg-purple-100 dark:bg-purple-900/40", hover: "hover:bg-purple-500 hover:text-white" },
-  Rezour: { base: "bg-slate-100 dark:bg-slate-800/60", hover: "hover:bg-slate-500 hover:text-white" },
-  "Tanapa UI": { base: "bg-orange-50 dark:bg-orange-900/40", hover: "hover:bg-orange-500 hover:text-white" },
-  Momentam: { base: "bg-sky-100 dark:bg-blue-900/40", hover: "hover:bg-sky-500 hover:text-white" },
-  "CEOs Forum": { base: "bg-emerald-50 dark:bg-emerald-900/40", hover: "hover:bg-emerald-500 hover:text-white" },
+// Brand-matched card colors (base tint + hover from each project's palette)
+const projectBgColorMap: Record<string, { base: string; hover: string; proseHover: string }> = {
+  "Cheryl's Cakes": {
+    base: "bg-amber-50 dark:bg-amber-950/25 border-amber-200/50 dark:border-amber-900/40",
+    hover: "hover:bg-amber-900 hover:border-amber-900 hover:text-amber-50",
+    proseHover: "group-hover:text-amber-50 group-hover:prose-p:text-amber-50 group-hover:prose-a:text-amber-50 group-hover:prose-strong:text-amber-50",
+  },
+  "Social Bean": {
+    base: "bg-yellow-50 dark:bg-yellow-950/20 border-yellow-200/60 dark:border-yellow-900/30",
+    hover: "hover:bg-yellow-400 hover:border-yellow-400 hover:text-black",
+    proseHover: "group-hover:text-black group-hover:prose-p:text-black/80 group-hover:prose-a:text-black group-hover:prose-strong:text-black",
+  },
+  "Hashly.ai": {
+    base: "bg-neutral-50 dark:bg-neutral-900/40 border-neutral-200/60 dark:border-neutral-800",
+    hover: "hover:bg-neutral-950 hover:border-neutral-950 hover:text-white",
+    proseHover: "group-hover:text-white group-hover:prose-p:text-neutral-200 group-hover:prose-a:text-amber-400 group-hover:prose-strong:text-white",
+  },
+  Seedbase: {
+    base: "bg-green-100 dark:bg-green-900/40",
+    hover: "hover:bg-green-600 hover:text-white",
+    proseHover: "group-hover:text-white group-hover:prose-p:text-white group-hover:prose-a:text-white group-hover:prose-strong:text-white",
+  },
+  "Afarensis GPU": {
+    base: "bg-purple-100 dark:bg-purple-900/40",
+    hover: "hover:bg-purple-500 hover:text-white",
+    proseHover: "group-hover:text-white group-hover:prose-p:text-white group-hover:prose-a:text-white group-hover:prose-strong:text-white",
+  },
+  Rezour: {
+    base: "bg-slate-100 dark:bg-slate-800/60",
+    hover: "hover:bg-slate-700 hover:text-white",
+    proseHover: "group-hover:text-white group-hover:prose-p:text-white group-hover:prose-a:text-white group-hover:prose-strong:text-white",
+  },
+  "Tanapa UI": {
+    base: "bg-orange-50 dark:bg-orange-900/40",
+    hover: "hover:bg-orange-500 hover:text-white",
+    proseHover: "group-hover:text-white group-hover:prose-p:text-white group-hover:prose-a:text-white group-hover:prose-strong:text-white",
+  },
+  Momentam: {
+    base: "bg-sky-100 dark:bg-blue-900/40",
+    hover: "hover:bg-sky-500 hover:text-white",
+    proseHover: "group-hover:text-white group-hover:prose-p:text-white group-hover:prose-a:text-white group-hover:prose-strong:text-white",
+  },
+  "CEOs Forum": {
+    base: "bg-emerald-50 dark:bg-emerald-900/40",
+    hover: "hover:bg-emerald-600 hover:text-white",
+    proseHover: "group-hover:text-white group-hover:prose-p:text-white group-hover:prose-a:text-white group-hover:prose-strong:text-white",
+  },
+};
+
+const projectGradientMap: Record<string, string> = {
+  "Cheryl's Cakes": "from-amber-900 via-amber-800 to-stone-800",
+  "Social Bean": "from-yellow-400 via-yellow-300 to-amber-200",
+  "Hashly.ai": "from-neutral-100 via-white to-amber-100",
 };
 
 export function ProjectCard({
@@ -59,6 +104,7 @@ export function ProjectCard({
 }: Props) {
   // Slideshow state
   const [current, setCurrent] = useState(0);
+  const [imageError, setImageError] = useState(false);
   useEffect(() => {
     if (!images || images.length < 2) return;
     const interval = setInterval(() => {
@@ -67,12 +113,14 @@ export function ProjectCard({
     return () => clearInterval(interval);
   }, [images]);
 
+  const styles = projectBgColorMap[title];
+
   return (
     <Card
       className={cn(
-        "group flex flex-col overflow-hidden border hover:shadow-lg transition-all duration-300 ease-out h-full",
-        projectBgColorMap[title]?.base || "bg-white dark:bg-slate-900/40",
-        projectBgColorMap[title]?.hover || "",
+        "group flex flex-col overflow-hidden border hover:shadow-lg active:scale-[0.99] transition-all duration-300 ease-out h-full",
+        styles?.base || "bg-white dark:bg-slate-900/40",
+        styles?.hover || "",
         className
       )}
     >
@@ -119,14 +167,19 @@ export function ProjectCard({
             playsInline
             className="pointer-events-none mx-auto h-40 w-full object-cover object-top"
           />
-        ) : image ? (
+        ) : image && !imageError ? (
           <Image
             src={image}
             alt={title}
             width={500}
             height={300}
             className="h-40 w-full overflow-hidden object-cover object-top"
+            onError={() => setImageError(true)}
           />
+        ) : projectGradientMap[title] ? (
+          <div className={`h-40 w-full bg-gradient-to-br ${projectGradientMap[title]} flex items-end p-4`}>
+            <span className="text-white/90 font-semibold text-sm drop-shadow-md">{title}</span>
+          </div>
         ) : null}
       </Link>
       <CardHeader className="px-2">
@@ -136,7 +189,10 @@ export function ProjectCard({
           <div className="hidden font-sans text-xs underline print:visible">
             {link?.replace("https://", "").replace("www.", "").replace("/", "")}
           </div>
-          <Markdown className="prose max-w-full text-pretty font-sans text-xs text-muted-foreground dark:prose-invert group-hover:text-white group-hover:prose-p:text-white group-hover:prose-a:text-white group-hover:prose-strong:text-white">
+          <Markdown className={cn(
+            "prose max-w-full text-pretty font-sans text-xs text-muted-foreground dark:prose-invert",
+            styles?.proseHover || "group-hover:text-white group-hover:prose-p:text-white group-hover:prose-a:text-white group-hover:prose-strong:text-white"
+          )}>
             {description}
           </Markdown>
         </div>

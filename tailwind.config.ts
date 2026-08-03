@@ -10,6 +10,12 @@ const config = {
     "bg-orange-50",
     "bg-blue-50",
     "bg-emerald-50",
+    "bg-yellow-50",
+    "bg-amber-50",
+    "bg-neutral-50",
+    "hover:bg-yellow-400",
+    "hover:bg-amber-900",
+    "hover:bg-neutral-950",
   ],
   content: [
     "./pages/**/*.{ts,tsx}",

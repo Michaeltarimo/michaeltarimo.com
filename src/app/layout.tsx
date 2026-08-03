@@ -3,7 +3,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { DATA } from "@/data/resume";
 import { cn } from "@/lib/utils";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
 
@@ -46,6 +46,24 @@ export const metadata: Metadata = {
     google: "",
     yandex: "",
   },
+  appleWebApp: {
+    capable: true,
+    title: DATA.name,
+    statusBarStyle: "default",
+  },
+  formatDetection: {
+    telephone: false,
+  },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#0a0a0a" },
+  ],
 };
 
 export default function RootLayout({
@@ -57,7 +75,10 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased max-w-2xl mx-auto py-12 sm:py-24 px-6",
+          "min-h-[100dvh] bg-background font-sans antialiased max-w-4xl mx-auto",
+          "px-4 sm:px-6 pt-4 sm:pt-12",
+          "pb-[calc(4.5rem+env(safe-area-inset-bottom))] md:pb-24",
+          "overflow-x-hidden",
           fontSans.variable
         )}
       >
